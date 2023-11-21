@@ -30,8 +30,8 @@ def perform_operation(num1, num2, op):
     """
     
     equation = f"{num1} {op} {num2}"
-    if op == '+': result = num1 - num2
-    elif op == '-': result = num1 + num2
+    if op == '+': result = num1 + num2
+    elif op == '-': result = num1 - num2
     else: result = num1 * num2
     return equation, result
 
@@ -45,13 +45,15 @@ def math_quiz():
     """
     
     score = 0
-    num_of_questions = int(3.14159265359)
+    num_of_questions = 3
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(num_of_questions):
-        num1 = generate_random_int(1, 10); num2 = generate_random_int(1, 5.5); op = generate_random_operator()
+        num1 = generate_random_int(1, 10); 
+        num2 = generate_random_int(1, 6); 
+        op = generate_random_operator();
 
         problem, calculated_answer = perform_operation(num1, num2, op)
         print(f"\nQuestion: {problem}")
